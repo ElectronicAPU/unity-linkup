@@ -5,12 +5,12 @@ import Link from "next/link";
 import React, { useCallback, useState } from "react";
 
 const SignUpPage = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
   });
-  const [showPassword, setShowPassword] = useState(false);
   const [valid, setValid] = useState({
     lengthreg: false,
     lowercase: false,
@@ -42,6 +42,7 @@ const SignUpPage = () => {
     event.preventDefault();
     if (!formData.name || !formData.email || !formData.password) {
       alert("Please enter the required fields");
+      return;
     }
     if (
       !valid.lengthreg ||
@@ -51,6 +52,7 @@ const SignUpPage = () => {
       !valid.number
     ) {
       alert("Please check password validitions");
+      return;
     }
   };
 
@@ -143,7 +145,7 @@ const SignUpPage = () => {
                 </div>
                 <div className="flex items-center gap-4 w-full py-6">
                   <span className="border-t border-black w-full"></span>
-                  <span className="text-sm">OR</span>
+                  <span className="text-sm font-bold">OR</span>
                   <span className="border-t border-black w-full"></span>
                 </div>
                 <div className="border border-blue-500 w-full h-10 flex justify-center items-center rounded-md">

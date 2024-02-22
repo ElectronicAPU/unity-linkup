@@ -2,8 +2,6 @@ import { Check, X } from "lucide-react";
 import React, { memo } from "react";
 
 const PasswordConditions = ({ valid }) => {
-
-  console.log(valid);
   return (
     <>
       <div className="py-2">
