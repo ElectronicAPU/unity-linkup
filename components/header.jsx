@@ -18,7 +18,7 @@ const Header = () => {
           <div className="flex items-center flex-1 h-9 bg-white px-2 rounded-md ">
             <Search className="text-gray-500" />
             <input
-              placeholder="Search by product, model, brand..."
+              placeholder="Search name"
               className="w-full outline-none text-black px-2 text-sm"
             />
           </div>

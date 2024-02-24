@@ -7,7 +7,7 @@ const OnlineSection = () => {
     <>
       <div className="sticky top-20">
         {/* Online */}
-        <div className="border-b w-72 border-gray-600">
+        <div className="border-b w-72 pb-1">
           <h1 className="font-semibold">Online - 4</h1>
         </div>
         <div className="py-4 flex flex-col gap-1 w-72">
@@ -26,7 +26,7 @@ const OnlineSection = () => {
           ))}
         </div>
         {/* Offline */}
-        <div className="flex items-center border-b w-72 border-gray-600 ">
+        <div className="flex items-center border-b w-72 pb-1 ">
           <h1 className="font-semibold">Offline - 44</h1>
         </div>
         <div className="py-4 flex flex-col gap-1 w-72">
