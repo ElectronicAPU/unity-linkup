@@ -11,10 +11,16 @@ export const metadata = {
 const HomePage = () => {
   return (
     <>
-      <div className="flex justify-between p-4">
-        <OnlineSection />
-        <PostSection />
-        <MenuSection />
+      <div className="flex justify-between p-4 relative">
+        <div className="flex-1">
+          <OnlineSection />
+        </div>
+        <div className="flex-1">
+          <PostSection />
+        </div>
+        <div className="flex-1">
+          <MenuSection />
+        </div>
       </div>
     </>
   );

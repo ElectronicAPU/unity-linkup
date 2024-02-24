@@ -5,7 +5,7 @@ import React from "react";
 const MenuSection = () => {
   return (
     <>
-       <div className="flex-1 flex justify-end">
+       <div className=" flex justify-end sticky top-20">
         <div className="flex flex-col gap-2">
           <Link href="#" className="w-fit flex items-center gap-2 text-sm font-semibold">
             <div className="rounded-full bg-gray-600 p-2">

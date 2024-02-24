@@ -5,10 +5,12 @@ import React from "react";
 const InitialLayout = ({ children }) => {
   return (
     <>
-      <div className="w-full h-full">
-        <Header />
-        <div className="h-full ">{children}</div>
-        <Footer />
+      <div className="w-full h-full relative ">
+        <div className="">
+          <Header />
+        </div>
+        <div className="h-full pt-16 ">{children}</div>
+        {/* <Footer /> */}
       </div>
     </>
   );

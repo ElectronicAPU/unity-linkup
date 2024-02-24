@@ -5,7 +5,7 @@ import React from "react";
 const OnlineSection = () => {
   return (
     <>
-      <div className="flex-1">
+      <div className="sticky top-20">
         {/* Online */}
         <div className="border-b w-72 border-gray-600">
           <h1 className="font-semibold">Online - 4</h1>
