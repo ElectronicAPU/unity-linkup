@@ -14,7 +14,7 @@ const OnlineSection = () => {
           {onlineFrineds.map((online) => (
             <Link
               key={online.id}
-              href="#"
+              href={`${online.route}/${online.id}`}
               className="flex items-center gap-2 hover:bg-gray-200 transition-colors duration-200 p-1 rounded-md"
             >
               <span className="p-1 rounded-full w-9 h-9 flex justify-center items-center bg-gray-300 border border-white relative">
@@ -30,16 +30,16 @@ const OnlineSection = () => {
           <h1 className="font-semibold">Offline - 44</h1>
         </div>
         <div className="py-4 flex flex-col gap-1 w-72">
-          {offlineFrineds.map((online) => (
+          {offlineFrineds.map((offline) => (
             <Link
-              key={online.id}
-              href="#"
+              key={offline.id}
+              href={`${offline.route}/${offline.id}`}
               className="flex items-center gap-2 hover:bg-gray-200 transition-colors duration-200 p-1 rounded-md"
             >
               <span className="p-1 rounded-full w-9 h-9 flex justify-center items-center bg-gray-300 border border-white ">
-                <online.logo className="w-4" />
+                <offline.logo className="w-4" />
               </span>
-              <h1 className="text-sm font-semibold">{online.name}</h1>
+              <h1 className="text-sm font-semibold">{offline.name}</h1>
             </Link>
           ))}
         </div>

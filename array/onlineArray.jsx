@@ -25,7 +25,7 @@ export const offlineFrineds = [
     id: 1,
     logo: User,
     name: "Apurba Naskar",
-    route: "/friends",
+    route: "/profile",
   },
   {
     id: 2,

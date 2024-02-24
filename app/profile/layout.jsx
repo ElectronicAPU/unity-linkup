@@ -4,9 +4,9 @@ import React from "react";
 const ProfileLayout = ({ children }) => {
   return (
     <>
-      <div>
-        <Header />
-        <div>{children}</div>
+      <div className="w-full h-full relative ">
+        <div className=""><Header /></div>
+        <div className="h-full pt-16 ">{children}</div>
       </div>
     </>
   );

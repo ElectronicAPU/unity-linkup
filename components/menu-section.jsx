@@ -14,7 +14,7 @@ const MenuSection = () => {
           </div>
           <div className=" flex flex-col ">
             <Link
-              href="#"
+              href="/profile"
               className="flex items-center gap-2 hover:bg-gray-200 transition-colors duration-200 p-1 rounded-md"
             >
               <span className="p-1 rounded-full w-9 h-9 flex justify-center items-center bg-gray-300 border border-white relative">

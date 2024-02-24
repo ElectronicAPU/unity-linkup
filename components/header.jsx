@@ -1,5 +1,6 @@
 import { Bell, Search, User } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Header = () => {
@@ -22,13 +23,13 @@ const Header = () => {
               className="w-full outline-none text-black px-2 text-sm"
             />
           </div>
-          <div className="flex flex-1 gap-2 justify-end items-center">
-            <div className="bg-gray-700 p-2 rounded-full">
-              <Bell />
+          <div className="flex flex-1 gap-3 justify-end items-center">
+            <div className="bg-gray-300 p-2 w-10 h-10 rounded-full flex justify-center items-center">
+              <Bell className="w-4 text-black"/>
             </div>
-            <div className="bg-gray-700 p-2 rounded-full">
-              <User />
-            </div>
+            <Link href="/profile" className="bg-gray-300 p-2 w-10 h-10 rounded-full flex justify-center items-center">
+              <User className="w-4 text-black"/>
+            </Link>
           </div>
         </div>
     </>
