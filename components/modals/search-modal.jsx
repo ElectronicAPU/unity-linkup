@@ -1,14 +1,33 @@
 "use client";
-import React, { memo } from "react";
+import React, { memo, useEffect, useRef } from "react";
 import ModalLayout from "../layouts/modal-layout";
 import { List, PlusCircleIcon, User } from "lucide-react";
 import Link from "next/link";
 
 const SearchModal = ({ openModal, setOpenModal }) => {
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      switch (event.key) {
+        case "Escape":
+          setOpenModal(false);
+          break;
+        default:
+          break;
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [openModal, setOpenModal]);
+
   return (
     <>
-      <ModalLayout>
-        <div className="bg-white w-4/12 p-2 rounded-md ">
+      <ModalLayout openModal={openModal} setOpenModal={setOpenModal}>
+        <div>
           <div className="flex justify-between items-center h-6">
             <div className="flex gap-1 items-center">
               <List className="w-5" />

@@ -9,7 +9,6 @@ import Link from "next/link";
 import React, { memo } from "react";
 
 const Posts = ({ post }) => {
-  console.log(post);
   return (
     <>
       <div className="bg-gray-300 p-2 rounded-lg overflow-y-hidden">

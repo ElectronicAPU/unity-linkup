@@ -24,7 +24,7 @@ const Header = () => {
           />
         </div>
         <div
-          onClick={() => setOpenModal(!openModal)}
+          onClick={() => setOpenModal(true)}
           className="flex items-center flex-1 h-9 bg-white px-2 rounded-md "
         >
           <Search className="text-gray-500" />
