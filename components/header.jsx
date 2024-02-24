@@ -15,13 +15,15 @@ const Header = () => {
       )}
       <div className="bg-black text-white p-4 flex justify-between items-center h-16 rounded-b-lg fixed w-full z-50 ">
         <div className="flex-1">
-          <Image
-            src="/images/logo.png"
-            width={150}
-            height={150}
-            alt="logo"
-            className="invert"
-          />
+          <Link href="/home">
+            <Image
+              src="/images/logo.png"
+              width={150}
+              height={150}
+              alt="logo"
+              className="invert"
+            />
+          </Link>
         </div>
         <div
           onClick={() => setOpenModal(true)}
