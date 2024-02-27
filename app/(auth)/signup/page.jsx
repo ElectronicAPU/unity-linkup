@@ -1,4 +1,5 @@
 "use client";
+import { connectDB } from "@/app/helper/db";
 import PasswordConditions from "@/components/password-conditions";
 import { Eye, EyeOff, Linkedin } from "lucide-react";
 import Link from "next/link";
@@ -11,6 +12,9 @@ const SignUpPage = () => {
     email: "",
     password: "",
   });
+
+  connectDB();
+
   const [valid, setValid] = useState({
     lengthreg: false,
     lowercase: false,
