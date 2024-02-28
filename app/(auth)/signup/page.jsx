@@ -1,9 +1,12 @@
 "use client";
 import { connectDB } from "@/app/helper/db";
+import { signUp } from "@/app/services/userService";
 import PasswordConditions from "@/components/password-conditions";
 import { Eye, EyeOff, Linkedin } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useCallback, useState } from "react";
+import { toast } from "react-toastify";
 
 const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -13,8 +16,6 @@ const SignUpPage = () => {
     password: "",
   });
 
-  connectDB();
-
   const [valid, setValid] = useState({
     lengthreg: false,
     lowercase: false,
@@ -22,6 +23,8 @@ const SignUpPage = () => {
     special: false,
     number: false,
   });
+
+  const router = useRouter();
 
   const validatePasswords = useCallback(
     (passwords) => {
@@ -55,8 +58,19 @@ const SignUpPage = () => {
       !valid.special ||
       !valid.number
     ) {
-      alert("Please check password validitions");
+      toast.warn("Please check password validitions");
       return;
+    }
+    try {
+      const res = await signUp(formData);
+      if (res.success) {
+        toast.success(res.message);
+        router.push("/login");
+      } else {
+        toast.error(res.message);
+      }
+    } catch (error) {
+      console.log(error.message);
     }
   };
 

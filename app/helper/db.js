@@ -28,8 +28,7 @@ export const connectDB = async () => {
       console.log("MongoDB disconnected".yellow);
     });
   } catch (error) {
-    console.log(error);
+    console.log(`Error connecting to MongoDB: ${error.message}`);
   }
 };
 
-connectDB();
