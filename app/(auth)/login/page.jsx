@@ -1,9 +1,10 @@
 "use client";
+import { signIn } from "@/app/services/userService";
 import { Eye, EyeOff, Linkedin } from "lucide-react";
-import { redirect } from "next/dist/server/api-utils";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -14,9 +15,24 @@ const LoginPage = () => {
 
   const router = useRouter();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    router.push("/home");
+    try {
+      if (!formData.email || !formData.password) {
+        return toast.error("Please enter all required fields");
+      }
+
+      const res = await signIn(formData);
+
+      if (res.success) {
+        toast.success(res.message);
+        router.push("/home");
+      } else {
+        toast.error(res.message);
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (
