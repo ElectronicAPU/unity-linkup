@@ -20,7 +20,7 @@ export async function signIn(userData) {
 
 export async function loggedInUser() {
   try {
-    const { data } = await httpAxios.get("/api/current");
+    const { data } = await httpAxios.get("/api/user");
     return data;
   } catch (error) {
     throw new Error(error.message);

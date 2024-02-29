@@ -1,8 +1,8 @@
-import { offlineFrineds, onlineFrineds } from "@/array/onlineArray";
+import { User } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { memo } from "react";
 
-const OnlineSection = () => {
+const OnlineSection = ({ users }) => {
   return (
     <>
       <div className="sticky top-20">
@@ -10,36 +10,19 @@ const OnlineSection = () => {
         <div className="border-b w-72 pb-1">
           <h1 className="font-semibold">Online - 4</h1>
         </div>
+
         <div className="py-4 flex flex-col gap-1 w-72">
-          {onlineFrineds.map((online) => (
+          {users?.map((online) => (
             <Link
-              key={online.id}
-              href={`${online.route}/${online.id}`}
+              key={online._id}
+              href={`/profile/${online._id}`}
               className="flex items-center gap-2 hover:bg-gray-200 transition-colors duration-200 p-1 rounded-md"
             >
               <span className="p-1 rounded-full w-9 h-9 flex justify-center items-center bg-gray-300 border border-white relative">
                 <span className="bg-green-500 w-2 h-2 rounded-full absolute bottom-0 right-0"></span>
-                <online.logo className="w-4" />
+                <User className="w-4" />
               </span>
               <h1 className="text-sm font-semibold">{online.name}</h1>
-            </Link>
-          ))}
-        </div>
-        {/* Offline */}
-        <div className="flex items-center border-b w-72 pb-1 ">
-          <h1 className="font-semibold">Offline - 44</h1>
-        </div>
-        <div className="py-4 flex flex-col gap-1 w-72">
-          {offlineFrineds.map((offline) => (
-            <Link
-              key={offline.id}
-              href={`${offline.route}/${offline.id}`}
-              className="flex items-center gap-2 hover:bg-gray-200 transition-colors duration-200 p-1 rounded-md"
-            >
-              <span className="p-1 rounded-full w-9 h-9 flex justify-center items-center bg-gray-300 border border-white ">
-                <offline.logo className="w-4" />
-              </span>
-              <h1 className="text-sm font-semibold">{offline.name}</h1>
             </Link>
           ))}
         </div>
