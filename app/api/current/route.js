@@ -1,6 +1,6 @@
+import { NextResponse } from "next/server";
 import { User } from "@/app/models/userModel";
 import jwt from "jsonwebtoken";
-import { NextResponse } from "next/server";
 
 // @desc    Fetch a user
 // @api     GET /api/user
