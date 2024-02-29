@@ -13,7 +13,7 @@ export async function GET(req) {
       return NextResponse.json({ message: "Invalid token", success: false });
     }
 
-    //VERIFY Token from cookies
+    //Verify Token
     const verifyToken = jwt.verify(token, process.env.JWT_SECRET);
     if (!verifyToken) {
       return NextResponse.json({

@@ -8,9 +8,19 @@ export async function signUp(userData) {
     throw new Error(error.message);
   }
 }
+
 export async function signIn(userData) {
   try {
     const { data } = await httpAxios.post(`/api/signin`, { ...userData });
+    return data;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}
+
+export async function loggedInUser() {
+  try {
+    const { data } = await httpAxios.get("/api/current");
     return data;
   } catch (error) {
     throw new Error(error.message);
