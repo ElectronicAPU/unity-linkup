@@ -6,6 +6,7 @@ const config = {
 };
 
 export const connectDB = async () => {
+  console.log("Click");
   try {
     if (config.isConnected) {
       return;

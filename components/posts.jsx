@@ -7,6 +7,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import React, { memo } from "react";
+import profilePic from "../public/images/post.jpg";
 
 const Posts = ({ post }) => {
   return (
@@ -26,14 +27,15 @@ const Posts = ({ post }) => {
             <MoreVertical />
           </button>
         </div>
-        <div className="w-full h-full relative mt-3">
+        <div className="parent-container mt-3">
           <Image
-            src="/images/post.jpg"
-            alt="post"
-            width={700}
-            height={700}
-            priority
-            className="rounded-md"
+            src={profilePic}
+            alt="posts image"
+            style={{
+              width: "100%",
+              height: "auto",
+              borderRadius: "5px",
+            }}
           />
         </div>
         <div className="mt-3 flex justify-between">

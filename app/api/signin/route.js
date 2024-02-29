@@ -2,12 +2,14 @@ import { User } from "@/app/models/userModel";
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import { connectDB } from "@/app/helper/db";
 
 // @desc        Create a user
 // @api         POST /api/signin
 // @access      Public
 export async function POST(req) {
   try {
+    await connectDB();
     const { email, password } = await req.json();
 
     const user = await User.findOne({ email });
